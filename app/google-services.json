@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "711509615344",
+    "project_id": "trendly-b6f67",
+    "storage_bucket": "trendly-b6f67.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:711509615344:android:9d3df9b5e0efaa422e9835",
+        "android_client_info": {
+          "package_name": "jin.yerim.trendly"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "711509615344-p9aljvgs3sta1rfgav03vad5k8dohdpv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCE7mQ6Y_9whvI3isdlqNvSLWEDyPIkCqo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "711509615344-p9aljvgs3sta1rfgav03vad5k8dohdpv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
