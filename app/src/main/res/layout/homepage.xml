@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="55dp"
-    android:layout_marginTop="120dp"
-    android:backgroundTint="@color/beige"
+    android:background="@color/beige2"
     >
 
     <TextView
@@ -17,7 +16,8 @@
         android:layout_gravity="center"
         android:textColor="@color/green"
         android:text="TRENDLY"
-        android:layout_marginBottom="10dp"/>
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="120dp"/>
 
     <EditText
         android:id="@+id/name"

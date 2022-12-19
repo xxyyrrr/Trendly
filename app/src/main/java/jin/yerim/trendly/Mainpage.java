@@ -45,16 +45,16 @@ public class Mainpage extends AppCompatActivity {
                 switch (item.getItemId()){
                     case R.id.item1:
                         item.setChecked(true);
-                        Toast.makeText(getApplicationContext(), "item1 selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "기프티콘 selected", Toast.LENGTH_SHORT).show();
                         drawerLayout.closeDrawers();
-                        Intent it = new Intent(Mainpage.this, Map.class);
+                        Intent it = new Intent(Mainpage.this, Giftcon.class);
                         startActivity(it);
                         break;
                     case R.id.item2:
                         item.setChecked(true);
-                        Toast.makeText(getApplicationContext(), "item2 selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "폼 작성 및 업로드 selected", Toast.LENGTH_SHORT).show();
                         drawerLayout.closeDrawers();
-                        Intent it2 = new Intent(Mainpage.this, Map.class);
+                        Intent it2 = new Intent(Mainpage.this, Form.class);
                         startActivity(it2);
                         break;
                 }
