@@ -9,5 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="green">#7BAF3F</color>
     <color name="yellow">#E4D657</color>
-    <color name="beige">#FFE6B4</color>
+    <color name="beige">#FBEFD7</color>
+    <color name="beige2">#F5F5DC</color>
+    <color name="green2">#ABE17C</color>
 </resources>
