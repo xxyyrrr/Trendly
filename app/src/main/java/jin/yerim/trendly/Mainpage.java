@@ -57,6 +57,13 @@ public class Mainpage extends AppCompatActivity {
                         Intent it2 = new Intent(Mainpage.this, Form.class);
                         startActivity(it2);
                         break;
+                    case R.id.item3:
+                        item.setChecked(true);
+                        Toast.makeText(getApplicationContext(), "고객문의 selected", Toast.LENGTH_SHORT).show();
+                        drawerLayout.closeDrawers();
+                        Intent it3 = new Intent(Mainpage.this, Help.class);
+                        startActivity(it3);
+                        break;
                 }
                 item.setChecked(false);
                 return false;
