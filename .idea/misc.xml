@@ -3,31 +3,30 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/seowoo/AndroidStudioProjects/Trendly/app/src/main/res/layout/charity.xml" value="0.2" />
+        <entry key="..\:/Users/seowoo/AndroidStudioProjects/Trendly/app/src/main/res/layout/drawer.xml" value="0.17864583333333334" />
+        <entry key="..\:/Users/seowoo/AndroidStudioProjects/Trendly/app/src/main/res/layout/form.xml" value="0.17864583333333334" />
+        <entry key="..\:/Users/seowoo/AndroidStudioProjects/Trendly/app/src/main/res/layout/formsubmit.xml" value="0.17864583333333334" />
+        <entry key="..\:/Users/seowoo/AndroidStudioProjects/Trendly/app/src/main/res/layout/giftcon.xml" value="0.17864583333333334" />
+        <entry key="..\:/Users/seowoo/AndroidStudioProjects/Trendly/app/src/main/res/layout/homepage.xml" value="0.17864583333333334" />
+        <entry key="..\:/Users/seowoo/AndroidStudioProjects/Trendly/app/src/main/res/layout/info.xml" value="0.17864583333333334" />
+        <entry key="..\:/Users/seowoo/AndroidStudioProjects/Trendly/app/src/main/res/layout/item.xml" value="0.17864583333333334" />
+        <entry key="..\:/Users/seowoo/AndroidStudioProjects/Trendly/app/src/main/res/layout/joinus.xml" value="0.17864583333333334" />
+        <entry key="..\:/Users/seowoo/AndroidStudioProjects/Trendly/app/src/main/res/layout/mainpage.xml" value="0.17864583333333334" />
+        <entry key="..\:/Users/seowoo/AndroidStudioProjects/Trendly/app/src/main/res/layout/map.xml" value="0.17864583333333334" />
+        <entry key="..\:/Users/seowoo/AndroidStudioProjects/Trendly/app/src/main/res/layout/toolbar.xml" value="0.17864583333333334" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2535" />
-        <entry key="app/src/main/res/drawable/ic_baseline_add_circle_24.xml" value="0.2105" />
-        <entry key="app/src/main/res/drawable/ic_baseline_arrow_downward_24.xml" value="0.2105" />
-        <entry key="app/src/main/res/drawable/ic_baseline_arrow_upward_24.xml" value="0.2105" />
-        <entry key="app/src/main/res/drawable/ic_baseline_camera_24.xml" value="0.2105" />
         <entry key="app/src/main/res/drawable/ic_baseline_menu_24.xml" value="0.248" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.2535" />
         <entry key="app/src/main/res/drawable/oval_style.xml" value="0.2525" />
-        <entry key="app/src/main/res/layout/charity.xml" value="0.24791666666666667" />
-        <entry key="app/src/main/res/layout/customerinfo.xml" value="0.12006079027355623" />
         <entry key="app/src/main/res/layout/drawer.xml" value="0.246875" />
-        <entry key="app/src/main/res/layout/form.xml" value="0.246875" />
-        <entry key="app/src/main/res/layout/formsubmit.xml" value="0.18353729248046874" />
-        <entry key="app/src/main/res/layout/giftcon.xml" value="0.19231567382812503" />
-        <entry key="app/src/main/res/layout/giftconi.xml" value="0.246875" />
         <entry key="app/src/main/res/layout/homepage.xml" value="0.1" />
         <entry key="app/src/main/res/layout/info.xml" value="0.246875" />
-        <entry key="app/src/main/res/layout/item.xml" value="0.1" />
         <entry key="app/src/main/res/layout/joinus.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/mainpage.xml" value="0.1463256835937502" />
+        <entry key="app/src/main/res/layout/mainpage.xml" value="0.1" />
         <entry key="app/src/main/res/layout/map.xml" value="0.24791666666666667" />
-        <entry key="app/src/main/res/layout/toolbar.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/toolbar.xml" value="0.246875" />
         <entry key="app/src/main/res/menu/menu.xml" value="0.24791666666666667" />
-        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.248" />
-        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.248" />
       </map>
     </option>
   </component>
