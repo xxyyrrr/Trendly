@@ -99,18 +99,25 @@ public class Giftcon extends AppCompatActivity {
                 ListViewAdapter adapter = new ListViewAdapter();
 
                 //Adapter 안에 아이템의 정보 담기
-
-//                adapter.addItem(new Item("1", "item1", R.drawable.ic_baseline_camera_24));
-//                adapter.addItem(new Item("2", "item2", R.drawable.ic_baseline_camera_24));
-//                adapter.addItem(new Item("3", "item3", R.drawable.ic_baseline_camera_24));
-//                adapter.addItem(new Item("4", "item4", R.drawable.ic_baseline_camera_24));
-//                adapter.addItem(new Item("5", "item5", R.drawable.ic_baseline_camera_24));
-//                adapter.addItem(new Item("6", "item6", R.drawable.ic_baseline_camera_24));
-//                adapter.addItem(new Item("7", "item7", R.drawable.ic_baseline_camera_24));
-//                adapter.addItem(new Item("8", "item8", R.drawable.ic_baseline_camera_24));
-
-                //리스트뷰에 Adapter 설정
-                listview.setAdapter(adapter);
+                db.collection("giftcon")
+                        .get()
+                        .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                            @Override
+                            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                if (task.isSuccessful()) {
+                                    for (QueryDocumentSnapshot document : task.getResult()) {
+                                        Log.d(TAG, document.getId() + " => " + document.getData().get("type"));
+                                        if (document.getData().get("type").equals("starbucks")){
+                                            Log.d(TAG, document.getData().get("type").toString());
+                                            adapter.addItem(new Item(document.getData().get("id").toString(), document.getData().get("name").toString(), R.drawable.ic_baseline_add_circle_24));
+                                        }
+                                    }
+                                    listview.setAdapter(adapter);
+                                } else {
+                                    Log.w(TAG, "Error getting documents.", task.getException());
+                                }
+                            }
+                        });
             }
         });
         Button btn3 = findViewById(R.id.button7);
@@ -120,18 +127,25 @@ public class Giftcon extends AppCompatActivity {
                 ListViewAdapter adapter = new ListViewAdapter();
 
                 //Adapter 안에 아이템의 정보 담기
-
-//                adapter.addItem(new Item("1", "item1", R.drawable.ic_baseline_camera_alt_24));
-//                adapter.addItem(new Item("2", "item2", R.drawable.ic_baseline_camera_alt_24));
-//                adapter.addItem(new Item("3", "item3", R.drawable.ic_baseline_camera_alt_24));
-//                adapter.addItem(new Item("4", "item4", R.drawable.ic_baseline_camera_alt_24));
-//                adapter.addItem(new Item("5", "item5", R.drawable.ic_baseline_camera_alt_24));
-//                adapter.addItem(new Item("6", "item6", R.drawable.ic_baseline_camera_alt_24));
-//                adapter.addItem(new Item("7", "item7", R.drawable.ic_baseline_camera_alt_24));
-//                adapter.addItem(new Item("8", "item8", R.drawable.ic_baseline_camera_alt_24));
-
-                //리스트뷰에 Adapter 설정
-                listview.setAdapter(adapter);
+                db.collection("giftcon")
+                        .get()
+                        .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                            @Override
+                            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                if (task.isSuccessful()) {
+                                    for (QueryDocumentSnapshot document : task.getResult()) {
+                                        Log.d(TAG, document.getId() + " => " + document.getData().get("type"));
+                                        if (document.getData().get("type").equals("google")){
+                                            Log.d(TAG, document.getData().get("type").toString());
+                                            adapter.addItem(new Item(document.getData().get("id").toString(), document.getData().get("name").toString(), R.drawable.ic_baseline_add_circle_24));
+                                        }
+                                    }
+                                    listview.setAdapter(adapter);
+                                } else {
+                                    Log.w(TAG, "Error getting documents.", task.getException());
+                                }
+                            }
+                        });
             }
         });
     }

@@ -35,7 +35,7 @@ public class Formsubmit extends AppCompatActivity {
         Button btn = findViewById(R.id.button14);
         TextView tv = (TextView) findViewById(R.id.textView16);
         TextView tv1 = (TextView) findViewById(R.id.textView17);
-        final int[] value = {0};
+        final int[] value = {0, 0};
         ImageButton ib = (ImageButton)findViewById(R.id.imageButton2);
         ImageButton ib1 = (ImageButton)findViewById(R.id.imageButton3);
         ImageButton ib2 = (ImageButton)findViewById(R.id.imageButton4);
@@ -65,14 +65,14 @@ public class Formsubmit extends AppCompatActivity {
         ib2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                value[0] = value[0] +1;
+                value[1] = value[1] +1;
                 tv1.setText(String.valueOf(value[0]));
             }
         });
         ib3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                value[0] = value[0] -1;
+                value[1] = value[1] -1;
                 tv1.setText(String.valueOf(value[0]));
             }
         });
@@ -86,6 +86,7 @@ public class Formsubmit extends AppCompatActivity {
                 public void onActivityResult(Uri result) {
                 if (result !=null) {
                     imageView2.setImageURI(result);
+                    imageView2.setVisibility(View.VISIBLE);
                 }
                 }
             }
