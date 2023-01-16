@@ -69,7 +69,7 @@ public class Charitysearch extends AppCompatActivity {
                                 Log.d(TAG, document.getId() + " => " + document.getData().get("name"));
                                 if (document.getData().get("type").equals("charity")) {
                                     Log.d(TAG, document.getData().get("type").toString());
-                                    adapter.addItem(new Item(document.getData().get("id").toString(), document.getData().get("name").toString(), R.drawable.ic_baseline_add_circle_24));
+                                    adapter.addItem(new Item("1", document.getData().get("name").toString(), R.drawable.ic_baseline_add_circle_24));
                                 }
                             }
                             listview.setAdapter(adapter);
@@ -157,11 +157,9 @@ public class Charitysearch extends AppCompatActivity {
             // listitem layout을 inflate 해준다.(memory에 올려준다)
             convertView = inflater.inflate(R.layout.item, viewGroup, false);
 
-            TextView tv_num = (TextView) convertView.findViewById(R.id.tv_num);
             TextView tv_name = (TextView) convertView.findViewById(R.id.tv_name);
             ImageView iv_icon = (ImageView) convertView.findViewById(R.id.iv_icon);
 
-            tv_num.setText(item.getNum());
             tv_name.setText(item.getName());
             iv_icon.setImageResource(item.getResId());
             Log.d(TAG, "getView() - [ " + position + " ] " + item.getName());

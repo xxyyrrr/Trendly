@@ -4,23 +4,25 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-<RelativeLayout
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:orientation="vertical">
-
-    <ListView
-        android:id="@+id/listView"
+        <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/add_circle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_baseline_add_circle_24"
-            app:fabSize="normal" />
-    </ListView>
+            <ListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            </ListView>
 
-</RelativeLayout>
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/add_circle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_add_circle_24"
+                app:fabSize="normal"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"/>
+
+        </RelativeLayout>
 </LinearLayout>

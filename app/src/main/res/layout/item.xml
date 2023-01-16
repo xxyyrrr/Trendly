@@ -11,14 +11,6 @@
             android:orientation="horizontal"
             android:layout_gravity="center">
 
-            <TextView
-                android:id="@+id/tv_num"
-                android:layout_width="0dp"
-                android:layout_height="fill_parent"
-                android:layout_weight="20"
-                android:text="1"
-                android:background="@color/beige"
-                android:gravity="center"/>
 
             <ImageView
                 android:id="@+id/iv_icon"
