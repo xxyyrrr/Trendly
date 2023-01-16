@@ -37,8 +37,8 @@ public class Charitysearch extends AppCompatActivity {
 
     private ListView listview;
     private ListViewAdapter adapter;
-    private ArrayList<charitysearch> items = new ArrayList<>();
-    private ArrayList<charitysearch> arraylist;
+    private ArrayList<Item> items = new ArrayList<>();
+    private ArrayList<Item> arraylist;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -55,34 +55,29 @@ public class Charitysearch extends AppCompatActivity {
         FloatingActionButton fab1 = findViewById(R.id.add_fab);
         LinearLayout fab2 = findViewById(R.id.add_person);
 
-        Button btn1 = findViewById(R.id.button5);
-        btn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Giftcon.ListViewAdapter adapter = new Giftcon.ListViewAdapter();
 
-                //Adapter 안에 아이템의 정보 담기
-                db.collection("charitysearch")
-                        .get()
-                        .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                            @Override
-                            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                                if (task.isSuccessful()) {
-                                    for (QueryDocumentSnapshot document : task.getResult()) {
-                                        Log.d(TAG, document.getId() + " => " + document.getData().get("name"));
-                                        if (document.getData().get("type").equals("charity")){
-                                            Log.d(TAG, document.getData().get("type").toString());
-                                            adapter.addItem(new Item(document.getData().get("id").toString(), document.getData().get("name").toString(), R.drawable.ic_baseline_add_circle_24));
-                                        }
-                                    }
-                                    listview.setAdapter(adapter);
-                                } else {
-                                    Log.w(TAG, "Error getting documents.", task.getException());
+        ListViewAdapter adapter = new ListViewAdapter();
+
+        //Adapter 안에 아이템의 정보 담기
+        db.collection("charitysearch")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                Log.d(TAG, document.getId() + " => " + document.getData().get("name"));
+                                if (document.getData().get("type").equals("charity")) {
+                                    Log.d(TAG, document.getData().get("type").toString());
+                                    adapter.addItem(new Item(document.getData().get("id").toString(), document.getData().get("name").toString(), R.drawable.ic_baseline_add_circle_24));
                                 }
                             }
-                        });
-            }
-        });
+                            listview.setAdapter(adapter);
+                        } else {
+                            Log.w(TAG, "Error getting documents.", task.getException());
+                        }
+                    }
+                });
         EditText editSearch = (EditText) findViewById(R.id.editSearch);
         editSearch.addTextChangedListener(new TextWatcher() {
             @Override
@@ -117,14 +112,11 @@ public class Charitysearch extends AppCompatActivity {
             items.addAll(arraylist);
         }
         // 문자 입력을 할때..
-        else
-        {
+        else {
             // 리스트의 모든 데이터를 검색한다.
-            for(int i = 0;i < arraylist.size(); i++)
-            {
+            for (int i = 0; i < arraylist.size(); i++) {
                 // arraylist의 모든 데이터에 입력받은 단어(charText)가 포함되어 있으면 true를 반환한다.
-                if (arraylist.get(i).getName().toLowerCase().contains(charText))
-                {
+                if (arraylist.get(i).getName().toLowerCase().contains(charText)) {
                     // 검색된 데이터를 리스트에 추가한다.
                     items.add(arraylist.get(i));
                 }
@@ -137,7 +129,7 @@ public class Charitysearch extends AppCompatActivity {
     /* 리스트뷰 어댑터 */
     public class ListViewAdapter extends BaseAdapter {
 
-        public void addItem(BearItem item) {
+        public void addItem(Item item) {
             items.add(item);
         }
 
@@ -159,29 +151,30 @@ public class Charitysearch extends AppCompatActivity {
         @Override
         public View getView(int position, View convertView, ViewGroup viewGroup) {
             final Context context = viewGroup.getContext();
-            final BearItem bearItem = items.get(position);
+            final Item item = items.get(position);
 
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             // listitem layout을 inflate 해준다.(memory에 올려준다)
-            convertView = inflater.inflate(R.layout.listitem_layout, viewGroup, false);
+            convertView = inflater.inflate(R.layout.item, viewGroup, false);
 
             TextView tv_num = (TextView) convertView.findViewById(R.id.tv_num);
             TextView tv_name = (TextView) convertView.findViewById(R.id.tv_name);
             ImageView iv_icon = (ImageView) convertView.findViewById(R.id.iv_icon);
 
-            tv_num.setText(bearItem.getNum());
-            tv_name.setText(bearItem.getName());
-            iv_icon.setImageResource(bearItem.getResId());
-            Log.d(TAG, "getView() - [ "+position+" ] "+bearItem.getName());
+            tv_num.setText(item.getNum());
+            tv_name.setText(item.getName());
+            iv_icon.setImageResource(item.getResId());
+            Log.d(TAG, "getView() - [ " + position + " ] " + item.getName());
 
             //각 아이템 선택 event
             convertView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(context, bearItem.getNum()+" 번 - "+bearItem.getName()+" 입니당! ", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, item.getNum() + " 번 - " + item.getName() + " 입니당! ", Toast.LENGTH_SHORT).show();
                 }
             });
 
             return convertView;  //뷰 객체 반환
         }
     }
+}
