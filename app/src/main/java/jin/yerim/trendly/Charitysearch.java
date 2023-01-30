@@ -44,61 +44,50 @@ public class Charitysearch extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.charitysearch); // page2 inflate를 시켜줬기 때문에 이 안에 있는 id를 가져와서 쓸 수 있다.
-        ListView listview = findViewById(R.id.listView);
+        listview = findViewById(R.id.listView);
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-
-
-        TextView tv = findViewById(R.id.textView2);
-        tv.setText("item1");
-
-        FloatingActionButton fab1 = findViewById(R.id.add_fab);
-        LinearLayout fab2 = findViewById(R.id.add_person);
-
-
-        ListViewAdapter adapter = new ListViewAdapter();
+        adapter = new ListViewAdapter();
+        arraylist = new ArrayList<Item>();
 
         //Adapter 안에 아이템의 정보 담기
         db.collection("charitysearch")
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            for (QueryDocumentSnapshot document : task.getResult()) {
-                                Log.d(TAG, document.getId() + " => " + document.getData().get("name"));
-                                if (document.getData().get("type").equals("charity")) {
-                                    Log.d(TAG, document.getData().get("type").toString());
-                                    adapter.addItem(new Item("1", document.getData().get("name").toString(), R.drawable.ic_baseline_add_circle_24));
-                                }
+            .get()
+            .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                    if (task.isSuccessful()) {
+                        for (QueryDocumentSnapshot document : task.getResult()) {
+                            if (document.getData().get("type").equals("charity")) {
+                                arraylist.add(new Item("1", document.getData().get("name").toString(), R.drawable.ic_baseline_add_circle_24));
                             }
-                            listview.setAdapter(adapter);
-                        } else {
-                            Log.w(TAG, "Error getting documents.", task.getException());
                         }
+
+                        adapter.addItems(arraylist);
+                        listview.setAdapter(adapter);
+
+                        EditText editSearch = (EditText) findViewById(R.id.editSearch);
+                        editSearch.addTextChangedListener(new TextWatcher() {
+                            @Override
+                            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                            }
+                            @Override
+                            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                            }
+                            @Override
+                            public void afterTextChanged(Editable editable) {
+                                // input창에 문자를 입력할때마다 호출된다.
+                                // search 메소드를 호출한다.
+                                String text = editSearch.getText().toString();
+                                search(text);
+                            }
+                        });
+                        listview.setAdapter(adapter);
+                    } else {
+                        Log.w(TAG, "Error getting documents.", task.getException());
                     }
-                });
-        EditText editSearch = (EditText) findViewById(R.id.editSearch);
-        editSearch.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-                // input창에 문자를 입력할때마다 호출된다.
-                // search 메소드를 호출한다.
-                String text = editSearch.getText().toString();
-                search(text);
-            }
-        });
-
-        listview.setAdapter(adapter);
+                }
+            });
     }
 
     // 검색을 수행하는 메소드
@@ -118,6 +107,7 @@ public class Charitysearch extends AppCompatActivity {
                 // arraylist의 모든 데이터에 입력받은 단어(charText)가 포함되어 있으면 true를 반환한다.
                 if (arraylist.get(i).getName().toLowerCase().contains(charText)) {
                     // 검색된 데이터를 리스트에 추가한다.
+                    Log.d(TAG, "in!!");
                     items.add(arraylist.get(i));
                 }
             }
@@ -131,6 +121,10 @@ public class Charitysearch extends AppCompatActivity {
 
         public void addItem(Item item) {
             items.add(item);
+        }
+
+        public void addItems(ArrayList<Item> item) {
+            items.addAll(item);
         }
 
         @Override
