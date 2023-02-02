@@ -22,7 +22,7 @@ public class Template extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.template);
 
-        Button23 = (Button) findViewById(R.id.button15);
+        Button23 = (Button) findViewById(R.id.button23);
         Button23.setOnClickListener(v -> mgetContent.launch("image/*"));
     }
     ActivityResultLauncher<String> mgetContent = registerForActivityResult(

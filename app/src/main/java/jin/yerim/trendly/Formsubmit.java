@@ -69,14 +69,14 @@ public class Formsubmit extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 value[1] = value[1] +1;
-                tv1.setText(String.valueOf(value[0]));
+                tv1.setText(String.valueOf(value[1]));
             }
         });
         ib3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 value[1] = value[1] -1;
-                tv1.setText(String.valueOf(value[0]));
+                tv1.setText(String.valueOf(value[1]));
             }
         });
 
