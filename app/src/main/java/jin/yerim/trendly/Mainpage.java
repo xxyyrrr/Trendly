@@ -1,6 +1,7 @@
 package jin.yerim.trendly;
 
 import android.content.Intent;
+import android.icu.text.IDNA;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -63,6 +64,20 @@ public class Mainpage extends AppCompatActivity {
                         drawerLayout.closeDrawers();
                         Intent it3 = new Intent(Mainpage.this, Help.class);
                         startActivity(it3);
+                        break;
+                    case R.id.item4:
+                        item.setChecked(true);
+                        Toast.makeText(getApplicationContext(), "회원정보 편집 selected", Toast.LENGTH_SHORT).show();
+                        drawerLayout.closeDrawers();
+                        Intent it4 = new Intent(Mainpage.this, Info.class);
+                        startActivity(it4);
+                        break;
+                    case R.id.item5:
+                        item.setChecked(true);
+                        Toast.makeText(getApplicationContext(), "업사이클 신청 selected", Toast.LENGTH_SHORT).show();
+                        drawerLayout.closeDrawers();
+                        Intent it5 = new Intent(Mainpage.this, Template.class);
+                        startActivity(it5);
                         break;
                 }
                 item.setChecked(false);

@@ -10,5 +10,7 @@
         android:id="@+id/item3"/>
     <item android:title="회원정보 편집"
         android:id="@+id/item4"/>
+    <item android:title="업사이클 신청"
+        android:id="@+id/item5" />
     </group>
 </menu>

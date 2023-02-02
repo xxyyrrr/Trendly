@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,18 +14,18 @@
         android:paddingTop="10dp">
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/button18"
             android:layout_width="wrap_content"
             android:layout_height="200dp"
             android:layout_weight="1"
-            android:text="암환자" />
+            android:text="template 1" />
 
         <Button
-            android:id="@+id/button8"
+            android:id="@+id/button19"
             android:layout_width="wrap_content"
             android:layout_height="200dp"
             android:layout_weight="1"
-            android:text="수감자 자녀" />
+            android:text="template 2" />
 
     </LinearLayout>
 
@@ -33,18 +35,18 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/button9"
+            android:id="@+id/button20"
             android:layout_width="wrap_content"
             android:layout_height="200dp"
             android:layout_weight="1"
-            android:text="고아" />
+            android:text="template 3" />
 
         <Button
-            android:id="@+id/button10"
+            android:id="@+id/button21"
             android:layout_width="wrap_content"
             android:layout_height="200dp"
             android:layout_weight="1"
-            android:text="노인" />
+            android:text="template 4" />
 
     </LinearLayout>
 
@@ -53,24 +55,32 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/button12"
+        <ImageView
+            android:id="@+id/imageView"
             android:layout_width="wrap_content"
-            android:layout_height="200dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="불우이웃" />
+            tools:srcCompat="@tools:sample/backgrounds/scenic"
+            android:visibility="gone"/>
 
         <Button
-            android:id="@+id/button11"
+            android:id="@+id/button22"
             android:layout_width="wrap_content"
             android:layout_height="200dp"
             android:layout_weight="1"
-            android:text="others" />
+            android:text="template 5" />
+
+        <Button
+            android:id="@+id/button23"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:layout_weight="1"
+            android:text="add design" />
 
     </LinearLayout>
 
     <Button
-        android:id="@+id/button13"
+        android:id="@+id/button24"
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_gravity="right"

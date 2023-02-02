@@ -24,6 +24,7 @@ public class Formsubmit extends AppCompatActivity {
 
     ImageView imageView2;
     Button Button15;
+    Button Button16;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +33,7 @@ public class Formsubmit extends AppCompatActivity {
 
         imageView2 = (ImageView) findViewById(R.id.imageView2);
         Button15 = (Button) findViewById(R.id.button15);
+        Button16 = (Button) findViewById(R.id.button16);
         Button btn = findViewById(R.id.button14);
         TextView tv = (TextView) findViewById(R.id.textView16);
         TextView tv1 = (TextView) findViewById(R.id.textView17);
@@ -41,6 +43,7 @@ public class Formsubmit extends AppCompatActivity {
         ImageButton ib2 = (ImageButton)findViewById(R.id.imageButton4);
         ImageButton ib3 = (ImageButton)findViewById(R.id.imageButton5);
         Button15.setOnClickListener(v -> mgetContent.launch("image/*"));
+        Button16.setOnClickListener(v -> mgetContent.launch("image/*"));
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

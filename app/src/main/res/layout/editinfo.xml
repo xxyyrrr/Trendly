@@ -9,26 +9,24 @@
         android:id="@+id/textView22"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="PERSONAL INFORMATION"
-        android:textSize="31dp"
+        android:text="EDIT INFORMATION"
+        android:textSize="35dp"
         android:textColor="@color/green"
         android:gravity="center"
         android:padding="20dp" />
 
-    <TextView
-        android:id="@+id/textView23"
+    <EditText
+        android:id="@+id/editTextTextPersonName5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:padding="10dp"
         android:inputType="textPersonName"
         android:hint="First Name"
         android:layout_marginHorizontal="20dp"
         android:paddingTop="30dp"/>
 
-    <TextView
-        android:id="@+id/textView24"
-        android:padding="10dp"
+    <EditText
+        android:id="@+id/editTextTextPersonName6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -37,9 +35,8 @@
         android:layout_marginHorizontal="20dp"
         android:paddingTop="20dp"/>
 
-    <TextView
-        android:id="@+id/textView25"
-        android:padding="10dp"
+    <EditText
+        android:id="@+id/editTextTextPersonName7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -48,9 +45,8 @@
         android:layout_marginHorizontal="20dp"
         android:paddingTop="20dp"/>
 
-    <TextView
-        android:id="@+id/textView26"
-        android:padding="10dp"
+    <EditText
+        android:id="@+id/editTextTextPassword3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -59,9 +55,8 @@
         android:layout_marginHorizontal="20dp"
         android:paddingTop="20dp"/>
 
-    <TextView
-        android:id="@+id/textView27"
-        android:padding="10dp"
+    <EditText
+        android:id="@+id/editTextTextPassword4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -70,9 +65,8 @@
         android:layout_marginHorizontal="20dp"
         android:paddingTop="20dp"/>
 
-    <TextView
-        android:id="@+id/textView28"
-        android:padding="10dp"
+    <EditText
+        android:id="@+id/editTextDate1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -81,9 +75,8 @@
         android:layout_marginHorizontal="20dp"
         android:paddingTop="20dp"/>
 
-    <TextView
-        android:id="@+id/textView29"
-        android:padding="10dp"
+    <EditText
+        android:id="@+id/editTextTextEmailAddress1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -92,9 +85,8 @@
         android:layout_marginHorizontal="20dp"
         android:paddingTop="20dp"/>
 
-    <TextView
-        android:id="@+id/textView30"
-        android:padding="10dp"
+    <EditText
+        android:id="@+id/editTextPhone1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -103,9 +95,8 @@
         android:layout_marginHorizontal="20dp"
         android:paddingTop="20dp"/>
 
-    <TextView
-        android:id="@+id/textView31"
-        android:padding="10dp"
+    <EditText
+        android:id="@+id/editTextTextPostalAddress1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -115,10 +106,10 @@
         android:paddingTop="20dp"/>
 
     <Button
-        android:id="@+id/button25"
+        android:id="@+id/button26"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Edit"
+        android:text="Submit"
         android:layout_marginLeft="305dp"
         android:layout_marginTop="16dp"
         android:backgroundTint="@color/green"/>

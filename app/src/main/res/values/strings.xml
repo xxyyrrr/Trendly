@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Trendly</string>
+    <string-array name="spinner_array">
+        <item>type1</item>
+        <item>type2</item>
+        <item>type3</item>
+    </string-array>
 </resources>
