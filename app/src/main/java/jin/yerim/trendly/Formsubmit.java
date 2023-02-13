@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -25,6 +26,8 @@ public class Formsubmit extends AppCompatActivity {
     ImageView imageView2;
     Button Button15;
     Button Button16;
+    TextView Str2 = findViewById(R.id.textView16);
+    TextView Str3 = findViewById(R.id.textView17);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +51,10 @@ public class Formsubmit extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent it = new Intent(Formsubmit.this, Charity.class);
+                String myInput = Str2.getText().toString();
+                String abc = Str3.getText().toString();
+                it.putExtra("userInput",myInput);
+                it.putExtra("userPassword",abc);
                 startActivity(it);
             }
         });
