@@ -3,6 +3,7 @@ package jin.yerim.trendly;
 import static android.content.ContentValues.TAG;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -162,7 +163,11 @@ public class Charitysearch extends AppCompatActivity {
             convertView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    Intent it = new Intent(Charitysearch.this, Charity.class);
                     Toast.makeText(context, item.getNum() + " 번 - " + item.getName() + " 입니당! ", Toast.LENGTH_SHORT).show();
+                    String bcd = item.getName().toString();
+                    it.putExtra("charity",bcd);
+                    startActivity(it);
                 }
             });
 

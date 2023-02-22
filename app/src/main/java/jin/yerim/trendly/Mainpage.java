@@ -62,7 +62,7 @@ public class Mainpage extends AppCompatActivity {
                         item.setChecked(true);
                         Toast.makeText(getApplicationContext(), "고객문의 selected", Toast.LENGTH_SHORT).show();
                         drawerLayout.closeDrawers();
-                        Intent it3 = new Intent(Mainpage.this, Help.class);
+                        Intent it3 = new Intent(Mainpage.this, Helpform.class);
                         startActivity(it3);
                         break;
                     case R.id.item4:

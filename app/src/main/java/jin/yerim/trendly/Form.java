@@ -17,7 +17,7 @@ public class Form extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.form);
 
-        FloatingActionButton btn = findViewById(R.id.add_circle);
+        FloatingActionButton btn = findViewById(R.id.add_circle1);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
