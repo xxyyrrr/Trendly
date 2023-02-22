@@ -74,6 +74,5 @@
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_gravity="right"
-
         android:text="submit" />
 </LinearLayout>
