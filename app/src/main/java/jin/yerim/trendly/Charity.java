@@ -27,16 +27,16 @@ public class Charity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.charity);
         String charity = getIntent().getStringExtra("charity");
-        int clothesnum = getIntent().getIntExtra("clothesnum");
-        int quality = getIntent().getIntExtra("quality");
+//        int clothesnum = getIntent().getIntExtra("clothesnum");
+//        int quality = getIntent().getIntExtra("quality");
         Button btn = findViewById(R.id.button11);
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
         // Create a new user with a first, middle, and last name
 
         Map<String, Object> charity1 = new HashMap<>();
-        charity1.put("clothesnum", clothesnum);
-        charity1.put("quality", quality);
+//        charity1.put("clothesnum", clothesnum);
+//        charity1.put("quality", quality);
         charity1.put("charity", charity);
 
 // Add a new document with a generated ID

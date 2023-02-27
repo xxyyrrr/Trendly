@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2535" />
+        <entry key="app/src/main/res/drawable/email.xml" value="0.2535" />
         <entry key="app/src/main/res/drawable/ic_baseline_add_circle_24.xml" value="0.2105" />
         <entry key="app/src/main/res/drawable/ic_baseline_arrow_downward_24.xml" value="0.2105" />
         <entry key="app/src/main/res/drawable/ic_baseline_arrow_upward_24.xml" value="0.2105" />

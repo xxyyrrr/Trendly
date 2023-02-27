@@ -49,7 +49,7 @@ public class Giftcon extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                                     for (QueryDocumentSnapshot document : task.getResult()) {
                                         Log.d(TAG, document.getId() + " => " + document.getData().get("type"));
-                                        if (document.getData().get("type").equals("cu")){
+                                        if (document.getData().get("type").equals("CU")){
                                             Log.d(TAG, document.getData().get("type").toString());
                                             // Create a reference with an initial file path and name
 

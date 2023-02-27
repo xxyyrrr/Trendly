@@ -2,17 +2,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/beige2">
 
-    <EditText
-        android:id="@+id/editTextTextMultiLine"
+    <TextView
+        android:id="@+id/textView5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
         android:text="1:1 문의"
-        android:padding="10dp"/>
+        android:gravity="start|top"
+        android:ems="10"
+        android:padding="10dp"
+        android:textStyle="bold"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -47,8 +48,7 @@
         android:layout_height="300dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
-        android:visibility="invisible"
+        android:text=" "
         android:padding="10dp"/>
 
     <Button
@@ -57,5 +57,33 @@
         android:layout_height="wrap_content"
         android:text="Submit"
         android:padding="10dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center">
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="49dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/email" />
+
+        <TextView
+            android:id="@+id/btnemail"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="문의 하기"
+            android:textStyle="bold"
+            android:textColor="@color/green"
+            android:textSize="20dp" />
+    </LinearLayout>
 
 </LinearLayout>

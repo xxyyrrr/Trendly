@@ -18,14 +18,14 @@
             android:layout_width="wrap_content"
             android:layout_height="200dp"
             android:layout_weight="1"
-            android:text="template 1" />
+            android:text="t-shirt" />
 
         <Button
             android:id="@+id/button19"
             android:layout_width="wrap_content"
             android:layout_height="200dp"
             android:layout_weight="1"
-            android:text="template 2" />
+            android:text="jogger pants" />
 
     </LinearLayout>
 
@@ -39,14 +39,14 @@
             android:layout_width="wrap_content"
             android:layout_height="200dp"
             android:layout_weight="1"
-            android:text="template 3" />
+            android:text="hoddie" />
 
         <Button
             android:id="@+id/button21"
             android:layout_width="wrap_content"
             android:layout_height="200dp"
             android:layout_weight="1"
-            android:text="template 4" />
+            android:text="zip-up hoodie" />
 
     </LinearLayout>
 
@@ -68,7 +68,7 @@
             android:layout_width="wrap_content"
             android:layout_height="200dp"
             android:layout_weight="1"
-            android:text="template 5" />
+            android:text="pants" />
 
         <Button
             android:id="@+id/button23"

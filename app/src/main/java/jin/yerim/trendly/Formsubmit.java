@@ -85,6 +85,8 @@ public class Formsubmit extends AppCompatActivity {
 
 
     }
+
+    private TextView email;
     ActivityResultLauncher<String> mgetContent = registerForActivityResult(
             new ActivityResultContracts.GetContent(),
             new ActivityResultCallback<Uri>(){

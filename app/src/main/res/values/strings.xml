@@ -1,8 +1,10 @@
 <resources>
     <string name="app_name">Trendly</string>
     <string-array name="spinner_array">
-        <item>type1</item>
-        <item>type2</item>
-        <item>type3</item>
+        <item>point error</item>
+        <item>application service error</item>
+        <item>donation error</item>
+        <item>upcycling error</item>
+        <item>etc</item>
     </string-array>
 </resources>
