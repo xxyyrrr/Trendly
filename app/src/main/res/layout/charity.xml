@@ -13,14 +13,14 @@
 
         <Button
             android:id="@+id/button4"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="200dp"
             android:layout_weight="1"
-            android:text="cancer" />
+            android:text="\ncancer" />
 
         <Button
             android:id="@+id/button8"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="200dp"
             android:layout_weight="1"
             android:text="children of\nprisoners" />
@@ -34,14 +34,14 @@
 
         <Button
             android:id="@+id/button9"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="200dp"
             android:layout_weight="1"
             android:text="orphans" />
 
         <Button
             android:id="@+id/button10"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="200dp"
             android:layout_weight="1"
             android:text="elder" />
@@ -51,18 +51,20 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        >
 
         <Button
             android:id="@+id/button12"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="200dp"
             android:layout_weight="1"
             android:text="poverty" />
 
         <Button
             android:id="@+id/button11"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="200dp"
             android:layout_weight="1"
             android:text="others" />

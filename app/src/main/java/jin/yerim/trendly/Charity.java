@@ -71,34 +71,38 @@ public class Charity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 charity = btn1.getText().toString();
+                charity1.put("charity", charity);
             }
         });
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 charity = btn2.getText().toString();
+                charity1.put("charity", charity);
             }
         });
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 charity = btn3.getText().toString();
+                charity1.put("charity", charity);
             }
         });
         btn4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 charity = btn4.getText().toString();
+                charity1.put("charity", charity);
             }
         });
         btn5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 charity = btn5.getText().toString();
+                charity1.put("charity", charity);
             }
         });
         btn.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View view) {
                 Intent it = new Intent(Charity.this, Charitysearch.class);

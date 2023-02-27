@@ -6,12 +6,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -45,6 +46,7 @@ public class Form extends AppCompatActivity {
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 Log.d(TAG, document.getId() + " => " + document.getData().get("charity") + document.getData().get("clothesnum") + document.getData().get("quality"));
                                 // Create a reference with an initial file path and name
+                                adapter.addItem(new FormItem(document.getData().get("charity").toString(), document.getData().get("clothesnum").toString(), document.getData().get("quality").toString()));
                             }
                         }
                         listview.setAdapter(adapter);
@@ -63,9 +65,9 @@ public class Form extends AppCompatActivity {
     }
 
     public class ListViewAdapter extends BaseAdapter {
-        ArrayList<Item> items = new ArrayList<Item>();
+        ArrayList<FormItem> items = new ArrayList<FormItem>();
 
-        public void addItem(Item item) {
+        public void addItem(FormItem item) {
             items.add(item);
         }
 
@@ -87,7 +89,22 @@ public class Form extends AppCompatActivity {
         @Override
         public View getView(int position, View convertView, ViewGroup viewGroup) {
             final Context context = viewGroup.getContext();
-            final Item Item = items.get(position);
+            final FormItem Item = items.get(position);
+
+            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            // listitem layout을 inflate 해준다.(memory에 올려준다)
+            convertView = inflater.inflate(R.layout.formitem, viewGroup, false);
+
+            TextView tv_charity = (TextView) convertView.findViewById(R.id.tv_charity);
+            tv_charity.setText(Item.getCharity());
+
+            TextView tv_clothesnum = (TextView) convertView.findViewById(R.id.tv_clothesnum);
+            tv_clothesnum.setText(Item.getClothesnum());
+
+            TextView tv_quality = (TextView) convertView.findViewById(R.id.tv_quality);
+            tv_quality.setText(Item.getQuality());
+            //각 아이템 선택 event
+
             return convertView;
         }
     }

@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:textSize="30dp"
             android:layout_gravity="center"
-            android:text="TextView" />
+            android:text="0 point" />
     </FrameLayout>
 
     <com.google.android.material.navigation.NavigationView

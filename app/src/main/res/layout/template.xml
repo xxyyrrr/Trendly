@@ -15,14 +15,14 @@
 
         <Button
             android:id="@+id/button18"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="200dp"
             android:layout_weight="1"
             android:text="t-shirt" />
 
         <Button
             android:id="@+id/button19"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="200dp"
             android:layout_weight="1"
             android:text="jogger pants" />
@@ -36,14 +36,14 @@
 
         <Button
             android:id="@+id/button20"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="200dp"
             android:layout_weight="1"
             android:text="hoddie" />
 
         <Button
             android:id="@+id/button21"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="200dp"
             android:layout_weight="1"
             android:text="zip-up hoodie" />
@@ -57,7 +57,7 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             tools:srcCompat="@tools:sample/backgrounds/scenic"
@@ -65,14 +65,14 @@
 
         <Button
             android:id="@+id/button22"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="200dp"
             android:layout_weight="1"
             android:text="pants" />
 
         <Button
             android:id="@+id/button23"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="200dp"
             android:layout_weight="1"
             android:text="add design" />

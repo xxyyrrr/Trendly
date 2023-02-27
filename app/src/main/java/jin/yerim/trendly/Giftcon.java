@@ -52,8 +52,8 @@ public class Giftcon extends AppCompatActivity {
                                         if (document.getData().get("type").equals("CU")){
                                             Log.d(TAG, document.getData().get("type").toString());
                                             // Create a reference with an initial file path and name
-
-                                            adapter.addItem(new Item(document.getData().get("id").toString(), document.getData().get("name").toString(), R.drawable.bbebbero1));
+                                            int resId = getResources().getIdentifier(document.getData().get("type").toString().toLowerCase()+document.getData().get("id").toString(), "drawable", "jin.yerim.trendly");
+                                            adapter.addItem(new Item(document.getData().get("id").toString(), document.getData().get("name").toString(), resId));
                                         }
                                     }
                                     listview.setAdapter(adapter);
@@ -81,7 +81,8 @@ public class Giftcon extends AppCompatActivity {
                                         Log.d(TAG, document.getId() + " => " + document.getData().get("type"));
                                         if (document.getData().get("type").equals("7eleven")){
                                             Log.d(TAG, document.getData().get("type").toString());
-                                            adapter.addItem(new Item(document.getData().get("id").toString(), document.getData().get("name").toString(), R.drawable.ic_baseline_add_circle_24));
+                                            int resId = getResources().getIdentifier(document.getData().get("type").toString().toLowerCase()+document.getData().get("id").toString(), "drawable", "jin.yerim.trendly");
+                                            adapter.addItem(new Item(document.getData().get("id").toString(), document.getData().get("name").toString(), resId));
                                         }
                                     }
                                     listview.setAdapter(adapter);
@@ -109,7 +110,8 @@ public class Giftcon extends AppCompatActivity {
                                         Log.d(TAG, document.getId() + " => " + document.getData().get("type"));
                                         if (document.getData().get("type").equals("starbucks")){
                                             Log.d(TAG, document.getData().get("type").toString());
-                                            adapter.addItem(new Item("1", document.getData().get("name").toString(), R.drawable.ic_baseline_add_circle_24));
+                                            int resId = getResources().getIdentifier(document.getData().get("type").toString().toLowerCase()+document.getData().get("id").toString(), "drawable", "jin.yerim.trendly");
+                                            adapter.addItem(new Item("1", document.getData().get("name").toString(), resId));
                                         }
                                     }
                                     listview.setAdapter(adapter);
@@ -137,7 +139,8 @@ public class Giftcon extends AppCompatActivity {
                                         Log.d(TAG, document.getId() + " => " + document.getData().get("type"));
                                         if (document.getData().get("type").equals("google")){
                                             Log.d(TAG, document.getData().get("type").toString());
-                                            adapter.addItem(new Item("1", document.getData().get("name").toString(), R.drawable.ic_baseline_add_circle_24));
+                                            int resId = getResources().getIdentifier(document.getData().get("type").toString().toLowerCase()+document.getData().get("id").toString(), "drawable", "jin.yerim.trendly");
+                                            adapter.addItem(new Item("1", document.getData().get("name").toString(), resId));
                                         }
                                     }
                                     listview.setAdapter(adapter);
