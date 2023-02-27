@@ -16,14 +16,14 @@
             android:layout_width="wrap_content"
             android:layout_height="200dp"
             android:layout_weight="1"
-            android:text="암환자" />
+            android:text="cancer" />
 
         <Button
             android:id="@+id/button8"
             android:layout_width="wrap_content"
             android:layout_height="200dp"
             android:layout_weight="1"
-            android:text="수감자 자녀" />
+            android:text="children of\nprisoners" />
 
     </LinearLayout>
 
@@ -37,14 +37,14 @@
             android:layout_width="wrap_content"
             android:layout_height="200dp"
             android:layout_weight="1"
-            android:text="고아" />
+            android:text="orphans" />
 
         <Button
             android:id="@+id/button10"
             android:layout_width="wrap_content"
             android:layout_height="200dp"
             android:layout_weight="1"
-            android:text="노인" />
+            android:text="elder" />
 
     </LinearLayout>
 
@@ -58,7 +58,7 @@
             android:layout_width="wrap_content"
             android:layout_height="200dp"
             android:layout_weight="1"
-            android:text="불우이웃" />
+            android:text="poverty" />
 
         <Button
             android:id="@+id/button11"

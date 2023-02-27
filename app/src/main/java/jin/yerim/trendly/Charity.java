@@ -56,12 +56,47 @@ public class Charity extends AppCompatActivity {
         quality = getIntent().getIntExtra("quality",0);
 
         Button btn = findViewById(R.id.button11);
+        Button btn1 = findViewById(R.id.button4);
+        Button btn2 = findViewById(R.id.button8);
+        Button btn3 = findViewById(R.id.button9);
+        Button btn4 = findViewById(R.id.button10);
+        Button btn5 = findViewById(R.id.button12);
         Button submit_btn = findViewById(R.id.button13);
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
         charity1.put("clothesnum", clothesnum);
         charity1.put("quality", quality);
 
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                charity = btn1.getText().toString();
+            }
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                charity = btn2.getText().toString();
+            }
+        });
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                charity = btn3.getText().toString();
+            }
+        });
+        btn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                charity = btn4.getText().toString();
+            }
+        });
+        btn5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                charity = btn5.getText().toString();
+            }
+        });
         btn.setOnClickListener(new View.OnClickListener() {
 
             @Override

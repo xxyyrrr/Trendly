@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
@@ -24,7 +25,9 @@ public class Template extends AppCompatActivity {
 
         Button23 = (Button) findViewById(R.id.button23);
         Button23.setOnClickListener(v -> mgetContent.launch("image/*"));
+        Toast.makeText(getApplicationContext(), "Sucess!", Toast.LENGTH_SHORT).show();
     }
+
     ActivityResultLauncher<String> mgetContent = registerForActivityResult(
             new ActivityResultContracts.GetContent(),
             new ActivityResultCallback<Uri>(){
@@ -36,5 +39,6 @@ public class Template extends AppCompatActivity {
                     }
                 }
             }
+
     );
 }

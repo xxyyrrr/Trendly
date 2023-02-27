@@ -9,7 +9,7 @@
         android:id="@+id/textView5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="1:1 문의"
+        android:text="1:1 INQUIRY"
         android:gravity="start|top"
         android:ems="10"
         android:padding="10dp"
@@ -25,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="문의유형"
+            android:text="Inquiry Type"
             android:padding="10dp"/>
         <Spinner
             android:id="@+id/spinner"
@@ -39,7 +39,7 @@
         android:id="@+id/textView21"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="문의내용"
+        android:text="Inquiry Content"
         android:padding="10dp"/>
 
     <EditText
@@ -57,33 +57,5 @@
         android:layout_height="wrap_content"
         android:text="Submit"
         android:padding="10dp"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:gravity="center">
-
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_marginTop="30dp"
-        android:layout_width="wrap_content"
-        android:layout_gravity="center"
-        android:layout_height="wrap_content">
-
-        <ImageView
-            android:layout_width="49dp"
-            android:layout_height="match_parent"
-            android:src="@drawable/email" />
-
-        <TextView
-            android:id="@+id/btnemail"
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="문의 하기"
-            android:textStyle="bold"
-            android:textColor="@color/green"
-            android:textSize="20dp" />
-    </LinearLayout>
 
 </LinearLayout>

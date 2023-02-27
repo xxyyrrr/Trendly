@@ -34,31 +34,32 @@ public class Form extends AppCompatActivity {
         ListView listview = findViewById(R.id.listView);
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
+        ListViewAdapter adapter = new ListViewAdapter();
+
+        db.collection("charity")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                Log.d(TAG, document.getId() + " => " + document.getData().get("charity") + document.getData().get("clothesnum") + document.getData().get("quality"));
+                                // Create a reference with an initial file path and name
+                            }
+                        }
+                        listview.setAdapter(adapter);
+                    }
+                });
 
         FloatingActionButton btn = findViewById(R.id.add_circle1);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ListViewAdapter adapter = new ListViewAdapter();
-
-                db.collection("charity")
-                        .get()
-                        .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                            @Override
-                            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                                if (task.isSuccessful()) {
-                                    for (QueryDocumentSnapshot document : task.getResult()) {
-                                        Log.d(TAG, document.getId() + " => " + document.getData().get("charity") + document.getData().get("clothesnum") + document.getData().get("quality"));
-                                        // Create a reference with an initial file path and name
-                                    }
-                                }
-                                listview.setAdapter(adapter);
-                            }
-                        });
+                Intent it = new Intent(Form.this, Formsubmit.class);
+                startActivity(it);
             }
         });
-        Intent it = new Intent(Form.this, Formsubmit.class);
-        startActivity(it);
+
     }
 
     public class ListViewAdapter extends BaseAdapter {
