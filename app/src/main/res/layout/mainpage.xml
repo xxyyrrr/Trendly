@@ -10,21 +10,38 @@
     android:fitsSystemWindows="true"
     >
 
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:background="@color/beige2">
         <include layout="@layout/toolbar"/>
+
     </LinearLayout>
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/circle_iv"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="@android:color/transparent"
         android:src="@drawable/oval_style"
         app:civ_border_color="@color/green"
         app:civ_border_overlay="false" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:layout_gravity="center"
+            android:text="TextView" />
+    </FrameLayout>
+
     <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
