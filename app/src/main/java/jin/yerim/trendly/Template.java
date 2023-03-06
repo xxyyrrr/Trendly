@@ -1,5 +1,6 @@
 package jin.yerim.trendly;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -18,17 +19,29 @@ public class Template extends AppCompatActivity {
     Button Button23;
     ImageView imageView;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.template);
+        Button btn = findViewById(R.id.button24);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "Success!", Toast.LENGTH_SHORT).show();
+                Intent it = new Intent(Template.this, Mainpage.class);
+                startActivity(it);
+            }
+        });
 
         Button23 = (Button) findViewById(R.id.button23);
         Button23.setOnClickListener(v -> mgetContent.launch("image/*"));
-        Toast.makeText(getApplicationContext(), "Sucess!", Toast.LENGTH_SHORT).show();
+
+
     }
 
-    ActivityResultLauncher<String> mgetContent = registerForActivityResult(
+
+            ActivityResultLauncher<String> mgetContent = registerForActivityResult(
             new ActivityResultContracts.GetContent(),
             new ActivityResultCallback<Uri>(){
                 @Override

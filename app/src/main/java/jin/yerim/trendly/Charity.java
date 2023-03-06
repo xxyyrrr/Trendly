@@ -71,6 +71,7 @@ public class Charity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 charity = btn1.getText().toString();
+                Toast.makeText(getApplicationContext(),"Cancer Selected!", Toast.LENGTH_SHORT).show();
                 charity1.put("charity", charity);
             }
         });
@@ -78,6 +79,7 @@ public class Charity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 charity = btn2.getText().toString();
+                Toast.makeText(getApplicationContext(),"Children of Prisoners Selected!", Toast.LENGTH_SHORT).show();
                 charity1.put("charity", charity);
             }
         });
@@ -85,6 +87,7 @@ public class Charity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 charity = btn3.getText().toString();
+                Toast.makeText(getApplicationContext(),"Orphans Selected!", Toast.LENGTH_SHORT).show();
                 charity1.put("charity", charity);
             }
         });
@@ -92,6 +95,7 @@ public class Charity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 charity = btn4.getText().toString();
+                Toast.makeText(getApplicationContext(),"Elder Selected!", Toast.LENGTH_SHORT).show();
                 charity1.put("charity", charity);
             }
         });
@@ -99,6 +103,7 @@ public class Charity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 charity = btn5.getText().toString();
+                Toast.makeText(getApplicationContext(),"Poverty Selected!", Toast.LENGTH_SHORT).show();
                 charity1.put("charity", charity);
             }
         });

@@ -12,7 +12,7 @@
         <entry key="app/src/main/res/drawable/ic_baseline_menu_24.xml" value="0.248" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.2535" />
         <entry key="app/src/main/res/drawable/oval_style.xml" value="0.2525" />
-        <entry key="app/src/main/res/layout/charity.xml" value="0.1256544502617801" />
+        <entry key="app/src/main/res/layout/charity.xml" value="0.28606552203912383" />
         <entry key="app/src/main/res/layout/charitysearch.xml" value="0.18611111111111112" />
         <entry key="app/src/main/res/layout/customerinfo.xml" value="0.12006079027355623" />
         <entry key="app/src/main/res/layout/drawer.xml" value="0.246875" />
@@ -31,7 +31,7 @@
         <entry key="app/src/main/res/layout/map.xml" value="0.24791666666666667" />
         <entry key="app/src/main/res/layout/spinner_layout.xml" value="0.25104166666666666" />
         <entry key="app/src/main/res/layout/support_simple_spinner_dropdown_item.xml" value="0.25104166666666666" />
-        <entry key="app/src/main/res/layout/template.xml" value="0.25104166666666666" />
+        <entry key="app/src/main/res/layout/template.xml" value="0.1" />
         <entry key="app/src/main/res/layout/toolbar.xml" value="0.1" />
         <entry key="app/src/main/res/menu/menu.xml" value="0.24791666666666667" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.248" />

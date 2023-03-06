@@ -169,7 +169,7 @@ public class Charitysearch extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     Intent it = new Intent(Charitysearch.this, Charity.class);
-                    Toast.makeText(context, item.getNum() + " 번 - " + item.getName() + " 입니당! ", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, item.getNum() + " number - " + item.getName() + " clicked ", Toast.LENGTH_SHORT).show();
                     String bcd = item.getName();
                     it.putExtra("charity",bcd);
                     setResult(Activity.RESULT_OK, it);
