@@ -81,7 +81,7 @@ public class Giftcon extends AppCompatActivity {
                                         Log.d(TAG, document.getId() + " => " + document.getData().get("type"));
                                         if (document.getData().get("type").equals("7eleven")){
                                             Log.d(TAG, document.getData().get("type").toString());
-                                            int resId = getResources().getIdentifier(document.getData().get("type").toString().toLowerCase()+document.getData().get("id").toString(), "drawable", "jin.yerim.trendly");
+                                            int resId = getResources().getIdentifier("seveneleven"+document.getData().get("id").toString(), "drawable", "jin.yerim.trendly");
                                             adapter.addItem(new Item(document.getData().get("id").toString(), document.getData().get("name").toString(), resId));
                                         }
                                     }
