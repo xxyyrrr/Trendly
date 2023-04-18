@@ -26,9 +26,10 @@
         <entry key="app/src/main/res/layout/homepage.xml" value="0.3637039184570313" />
         <entry key="app/src/main/res/layout/info.xml" value="0.246875" />
         <entry key="app/src/main/res/layout/item.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/joinus.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/joinus.xml" value="0.33097381591796876" />
         <entry key="app/src/main/res/layout/mainpage.xml" value="0.1463256835937502" />
         <entry key="app/src/main/res/layout/map.xml" value="0.24791666666666667" />
+        <entry key="app/src/main/res/layout/selection.xml" value="0.25104166666666666" />
         <entry key="app/src/main/res/layout/spinner_layout.xml" value="0.25104166666666666" />
         <entry key="app/src/main/res/layout/support_simple_spinner_dropdown_item.xml" value="0.25104166666666666" />
         <entry key="app/src/main/res/layout/template.xml" value="0.1" />
