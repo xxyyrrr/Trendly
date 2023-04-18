@@ -121,9 +121,9 @@ public class RecommendationsFragment extends AppCompatActivity, Fragment {
         sb.append("Top Clothing Recommendations:\n\n");
         for (ClothingItem clothingItem : clothingItems) {
             sb.append(clothingItem.getName()).append("\n");
-            sb.append("Color: ").append(clothingItem.getStyle().getIsCasual()).append("\n");
-            sb.append("Pattern: ").append(clothingItem.getStyle().getPattern()).append("\n");
-            sb.append("Material: ").append(clothingItem.getStyle().getMaterial()).append("\n");
+            sb.append("isCasual: ").append(clothingItem.getStyle().getisCasual()).append("\n");
+            sb.append("isFormal: ").append(clothingItem.getStyle().getisFormal()).append("\n");
+            sb.append("isSporty: ").append(clothingItem.getStyle().getisSporty()).append("\n");
             sb.append("Similarity Score: ").append(clothingItem.getSimilarityScore()).append("\n\n");
         }
         mRecommendationsTextView.setText(sb.toString());
