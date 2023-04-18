@@ -5,7 +5,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -13,11 +12,16 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -29,37 +33,17 @@ public class RecommendationsFragment extends AppCompatActivity {
     private static final String TAG = "RecommendationsFragment";
 
     private TextView mRecommendationsTextView;
-    private StylePreference mUserPreference;
-
-//    public static RecommendationsFragment newInstance() {
-//        return new RecommendationsFragment();
-//    }
-
-//    @Override
-//    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-//                             Bundle savedInstanceState) {
-//        View view = inflater.inflate(R.layout.fragment_recommendations, container, false);
-//        mRecommendationsTextView = view.findViewById(R.id.recommendations_text_view);
-//        return view;
-//    }
+    private Style mUserPreference;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_recommendations);
-        ListView listview = findViewById(R.id.listView);
-
         mRecommendationsTextView = findViewById(R.id.recommendations_text_view);
 
-        mUserPreference = getUserPreference();
+        mUserPreference = new Style(true, false, true);
         retrieveClothingItems();
     }
-
-//    @Override
-//    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-//        super.onViewCreated(view, savedInstanceState);
-//
-//    }
 
     private StylePreference getUserPreference() {
         // Implement user interface to select preferred style and return user preference as StylePreference object
@@ -67,41 +51,54 @@ public class RecommendationsFragment extends AppCompatActivity {
     }
 
     private void retrieveClothingItems() {
-        Query query = FirebaseDatabase.getInstance().getReference("clothing_items");
-        query.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                List<ClothingItem> clothingItems = new ArrayList<>();
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    ClothingItem clothingItem = snapshot.getValue(ClothingItem.class);
-                    clothingItems.add(clothingItem);
-                }
 
-                for (ClothingItem clothingItem : clothingItems) {
-                    int similarityScore = calculateSimilarityScore(mUserPreference, clothingItem.getStyle());
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        List<Style> clothingItems = new ArrayList<>();
 
-                    clothingItem.setSimilarityScore(similarityScore);
-                }
+        db.collection("userPreference")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
 
-                Collections.sort(clothingItems, new Comparator<ClothingItem>() {
-                    public int compare(ClothingItem clothingItem1, ClothingItem clothingItem2) {
-                        return Integer.compare(clothingItem2.getSimilarityScore(), clothingItem1.getSimilarityScore());
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                Log.d(TAG, document.getId() + " => " + document.getData());
+
+                                Style clothingItem = new Style((Boolean) document.getData().get("casual"), (Boolean)document.getData().get("formal"), (Boolean)document.getData().get("sporty"));
+                                clothingItems.add(clothingItem);
+//                                Log.d(TAG, clothingItems.toString());
+
+                            }
+                            for (Style clothingItem : clothingItems) {
+                                int similarityScore = calculateSimilarityScore(clothingItem);
+                                // Store the similarity score with the clothing item
+                                clothingItem.setSimilarityScore(similarityScore);
+                            }
+
+                            // Sort the clothing items based on their similarity scores
+                            Collections.sort(clothingItems, new Comparator<Style>() {
+                                public int compare(Style clothingItem1, Style clothingItem2) {
+                                    return Integer.compare(clothingItem2.getSimilarityScore(), clothingItem1.getSimilarityScore());
+                                }
+                            });
+
+                            // Display the top N clothing items to the user
+                            int numRecommendations = 5;
+                            List<Style> topClothingItems = clothingItems.subList(0, Math.min(numRecommendations, clothingItems.size()));
+                            displayRecommendations(topClothingItems);
+
+
+                        } else {
+                            Log.w(TAG, "Error getting documents.", task.getException());
+                        }
                     }
                 });
 
-                int numRecommendations = 5;
-                List<ClothingItem> topClothingItems = clothingItems.subList(0, Math.min(numRecommendations, clothingItems.size()));
-                displayRecommendations(topClothingItems);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Log.e(TAG, "onCancelled: " + databaseError.getMessage());
-            }
-        });
     }
+
     int similarityScore = 0;
-    private int calculateSimilarityScore(StylePreference userPreference, Style clothingItemStyle) {
+    private int calculateSimilarityScore(Style clothingItemStyle) {
 
         if (clothingItemStyle.getIsCasual()) {
             similarityScore += 1;
@@ -115,14 +112,14 @@ public class RecommendationsFragment extends AppCompatActivity {
         return similarityScore / 3; // Normalize similarity score to be between 0 and 1
     }
 
-    private void displayRecommendations(List<ClothingItem> clothingItems) {
+    private void displayRecommendations(List<Style> clothingItems) {
         StringBuilder sb = new StringBuilder();
         sb.append("Top Clothing Recommendations:\n\n");
-        for (ClothingItem clothingItem : clothingItems) {
-            sb.append(clothingItem.getName()).append("\n");
-            sb.append("isCasual: ").append(clothingItem.getStyle().getIsCasual()).append("\n");
-            sb.append("isFormal: ").append(clothingItem.getStyle().getIsFormal()).append("\n");
-            sb.append("isSporty: ").append(clothingItem.getStyle().getIsSporty()).append("\n");
+        for (Style clothingItem : clothingItems) {
+//            sb.append(clothingItem.getName()).append("\n");
+            sb.append("isCasual: ").append(clothingItem.getIsCasual()).append("\n");
+            sb.append("isFormal: ").append(clothingItem.getIsFormal()).append("\n");
+            sb.append("isSporty: ").append(clothingItem.getIsSporty()).append("\n");
             sb.append("Similarity Score: ").append(clothingItem.getSimilarityScore()).append("\n\n");
         }
         mRecommendationsTextView.setText(sb.toString());
