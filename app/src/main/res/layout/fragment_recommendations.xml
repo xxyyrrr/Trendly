@@ -9,9 +9,21 @@
         android:id="@+id/recommendations_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:gravity="center"
         android:text="Recommended Clothing Items"
         android:textSize="24sp"
         android:textStyle="bold"
         android:textColor="@color/green"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    </RelativeLayout>
 
 </LinearLayout>

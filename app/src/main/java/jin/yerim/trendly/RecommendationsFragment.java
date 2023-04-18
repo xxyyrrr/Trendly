@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -46,6 +47,8 @@ public class RecommendationsFragment extends AppCompatActivity {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_recommendations);
+        ListView listview = findViewById(R.id.listView);
+
         mRecommendationsTextView = findViewById(R.id.recommendations_text_view);
 
         mUserPreference = getUserPreference();
@@ -74,22 +77,18 @@ public class RecommendationsFragment extends AppCompatActivity {
                     clothingItems.add(clothingItem);
                 }
 
-                // Calculate the similarity score between the user's preferred style and each clothing item
                 for (ClothingItem clothingItem : clothingItems) {
                     int similarityScore = calculateSimilarityScore(mUserPreference, clothingItem.getStyle());
 
-                    // Store the similarity score with the clothing item
                     clothingItem.setSimilarityScore(similarityScore);
                 }
 
-                // Sort the clothing items based on their similarity scores
                 Collections.sort(clothingItems, new Comparator<ClothingItem>() {
                     public int compare(ClothingItem clothingItem1, ClothingItem clothingItem2) {
                         return Integer.compare(clothingItem2.getSimilarityScore(), clothingItem1.getSimilarityScore());
                     }
                 });
 
-                // Display the top N clothing items to the user
                 int numRecommendations = 5;
                 List<ClothingItem> topClothingItems = clothingItems.subList(0, Math.min(numRecommendations, clothingItems.size()));
                 displayRecommendations(topClothingItems);
