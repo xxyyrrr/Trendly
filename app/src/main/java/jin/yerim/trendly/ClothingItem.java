@@ -22,7 +22,6 @@ public class ClothingItem {
         this.name = name;
         this.brand = brand;
         this.style = style;
-
     }
 
     public void writeToDatabase() {

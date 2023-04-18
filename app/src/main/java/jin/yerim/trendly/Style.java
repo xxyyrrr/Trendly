@@ -9,6 +9,9 @@ public class Style {
     private boolean isFormal;
     private boolean isSporty;
 
+    private int similarityScore;
+
+
     public Style(boolean isCasual, boolean isFormal, boolean isSporty) {
         this.isCasual = isCasual;
         this.isFormal = isFormal;
@@ -45,6 +48,14 @@ public class Style {
 
     public void setIsSporty(boolean isSporty) {
         this.isSporty = isSporty;
+    }
+
+    public int getSimilarityScore() {
+        return similarityScore;
+    }
+
+    public void setSimilarityScore(int similarityScore) {
+        this.similarityScore = similarityScore;
     }
 
 }
