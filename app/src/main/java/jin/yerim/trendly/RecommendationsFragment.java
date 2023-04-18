@@ -94,13 +94,13 @@ public class RecommendationsFragment extends Fragment {
     int similarityScore = 0;
     private int calculateSimilarityScore(StylePreference userPreference, Style clothingItemStyle) {
 
-        if (userPreference.getColor().equals(clothingItemStyle.getColor())) {
+        if (userPreference.getColor().equals(clothingItemStyle.getisCasual())) {
             similarityScore += 1;
         }
-        if (userPreference.getPattern().equals(clothingItemStyle.getPattern())) {
+        if (userPreference.getPattern().equals(clothingItemStyle.getisFormal())) {
             similarityScore += 1;
         }
-        if (userPreference.getMaterial().equals(clothingItemStyle.getMaterial())) {
+        if (userPreference.getMaterial().equals(clothingItemStyle.getisSporty())) {
             similarityScore += 1;
         }
         return similarityScore / 3; // Normalize similarity score to be between 0 and 1
@@ -111,9 +111,9 @@ public class RecommendationsFragment extends Fragment {
         sb.append("Top Clothing Recommendations:\n\n");
         for (ClothingItem clothingItem : clothingItems) {
             sb.append(clothingItem.getName()).append("\n");
-            sb.append("Color: ").append(clothingItem.getStyle().getColor()).append("\n");
-            sb.append("Pattern: ").append(clothingItem.getStyle().getPattern()).append("\n");
-            sb.append("Material: ").append(clothingItem.getStyle().getMaterial()).append("\n");
+            sb.append("isCasual: ").append(clothingItem.getStyle().getisCasual()).append("\n");
+            sb.append("isFormal: ").append(clothingItem.getStyle().getisFormal()).append("\n");
+            sb.append("isSporty: ").append(clothingItem.getStyle().getisSporty()).append("\n");
             sb.append("Similarity Score: ").append(clothingItem.getSimilarityScore()).append("\n\n");
         }
         mRecommendationsTextView.setText(sb.toString());
