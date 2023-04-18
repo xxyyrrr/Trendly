@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.google.firebase.database.DataSnapshot;
@@ -22,7 +23,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class RecommendationsFragment extends Fragment {
+public class RecommendationsFragment extends AppCompatActivity, Fragment {
 
     private static final String TAG = "RecommendationsFragment";
 
@@ -42,11 +43,20 @@ public class RecommendationsFragment extends Fragment {
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.fragment_recommendations);
+        mRecommendationsTextView = findViewById(R.id.recommendations_text_view);
+
         mUserPreference = getUserPreference();
         retrieveClothingItems();
     }
+
+//    @Override
+//    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+//        super.onViewCreated(view, savedInstanceState);
+//
+//    }
 
     private StylePreference getUserPreference() {
         // Implement user interface to select preferred style and return user preference as StylePreference object
@@ -111,11 +121,16 @@ public class RecommendationsFragment extends Fragment {
         sb.append("Top Clothing Recommendations:\n\n");
         for (ClothingItem clothingItem : clothingItems) {
             sb.append(clothingItem.getName()).append("\n");
-            sb.append("Color: ").append(clothingItem.getStyle().getColor()).append("\n");
+            sb.append("Color: ").append(clothingItem.getStyle().getIsCasual()).append("\n");
             sb.append("Pattern: ").append(clothingItem.getStyle().getPattern()).append("\n");
             sb.append("Material: ").append(clothingItem.getStyle().getMaterial()).append("\n");
             sb.append("Similarity Score: ").append(clothingItem.getSimilarityScore()).append("\n\n");
         }
         mRecommendationsTextView.setText(sb.toString());
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+        super.onPointerCaptureChanged(hasCapture);
     }
 }
