@@ -111,9 +111,9 @@ public class RecommendationsFragment extends Fragment {
         sb.append("Top Clothing Recommendations:\n\n");
         for (ClothingItem clothingItem : clothingItems) {
             sb.append(clothingItem.getName()).append("\n");
-            sb.append("isCasual: ").append(clothingItem.getStyle().getisCasual()).append("\n");
-            sb.append("isFormal: ").append(clothingItem.getStyle().getisFormal()).append("\n");
-            sb.append("isSporty: ").append(clothingItem.getStyle().getisSporty()).append("\n");
+            sb.append("isCasual: ").append(clothingItem.getStyle().getIsCasual()).append("\n");
+            sb.append("isFormal: ").append(clothingItem.getStyle().getIsFormal()).append("\n");
+            sb.append("isSporty: ").append(clothingItem.getStyle().getIsSporty()).append("\n");
             sb.append("Similarity Score: ").append(clothingItem.getSimilarityScore()).append("\n\n");
         }
         mRecommendationsTextView.setText(sb.toString());
