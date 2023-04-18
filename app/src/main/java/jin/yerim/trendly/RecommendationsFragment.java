@@ -23,24 +23,24 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class RecommendationsFragment extends AppCompatActivity, Fragment {
+public class RecommendationsFragment extends AppCompatActivity {
 
     private static final String TAG = "RecommendationsFragment";
 
     private TextView mRecommendationsTextView;
     private StylePreference mUserPreference;
 
-    public static RecommendationsFragment newInstance() {
-        return new RecommendationsFragment();
-    }
+//    public static RecommendationsFragment newInstance() {
+//        return new RecommendationsFragment();
+//    }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_recommendations, container, false);
-        mRecommendationsTextView = view.findViewById(R.id.recommendations_text_view);
-        return view;
-    }
+//    @Override
+//    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+//                             Bundle savedInstanceState) {
+//        View view = inflater.inflate(R.layout.fragment_recommendations, container, false);
+//        mRecommendationsTextView = view.findViewById(R.id.recommendations_text_view);
+//        return view;
+//    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -121,16 +121,12 @@ public class RecommendationsFragment extends AppCompatActivity, Fragment {
         sb.append("Top Clothing Recommendations:\n\n");
         for (ClothingItem clothingItem : clothingItems) {
             sb.append(clothingItem.getName()).append("\n");
-            sb.append("isCasual: ").append(clothingItem.getStyle().getisCasual()).append("\n");
-            sb.append("isFormal: ").append(clothingItem.getStyle().getisFormal()).append("\n");
-            sb.append("isSporty: ").append(clothingItem.getStyle().getisSporty()).append("\n");
+            sb.append("isCasual: ").append(clothingItem.getStyle().getIsCasual()).append("\n");
+            sb.append("isFormal: ").append(clothingItem.getStyle().getIsFormal()).append("\n");
+            sb.append("isSporty: ").append(clothingItem.getStyle().getIsSporty()).append("\n");
             sb.append("Similarity Score: ").append(clothingItem.getSimilarityScore()).append("\n\n");
         }
         mRecommendationsTextView.setText(sb.toString());
     }
 
-    @Override
-    public void onPointerCaptureChanged(boolean hasCapture) {
-        super.onPointerCaptureChanged(hasCapture);
-    }
 }
