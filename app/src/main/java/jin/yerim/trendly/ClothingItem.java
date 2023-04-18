@@ -13,12 +13,16 @@ public class ClothingItem {
     private String name;
     private String brand;
     private Style style;
+    private int similarityScore;
+
+
 
     public ClothingItem(String id, String name, String brand, Style style) {
         this.id = id;
         this.name = name;
         this.brand = brand;
         this.style = style;
+
     }
 
     public void writeToDatabase() {
@@ -47,6 +51,12 @@ public class ClothingItem {
     }
 
     public Style getStyle() {
+        return style;
     }
+
+    public String getName () {
+        return name;
+    }
+
 }
 
