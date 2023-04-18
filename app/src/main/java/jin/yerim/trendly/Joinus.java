@@ -23,19 +23,12 @@ public class Joinus extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent it = new Intent(Joinus.this, Homepage.class);
+                startActivity(it);
                 EditText Str2 = findViewById(R.id.editTextTextPersonName2);
                 EditText Str3 = findViewById(R.id.editTextTextPersonName3);
                 String username = Str2.getText().toString();
                 String password = Str3.getText().toString();
-
-                if (username.equals("valid_username") && password.equals("valid_password")) {
-                    Intent it = new Intent(Joinus.this, Homepage.class);
-                    it.putExtra("userInput", username);
-                    it.putExtra("userPassword", password);
-                    startActivity(it);
-                } else {
-                    Toast.makeText(Joinus.this, "Invalid login credentials", Toast.LENGTH_SHORT).show();
-                }
             }
         });
 

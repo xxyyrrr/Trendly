@@ -12,5 +12,7 @@
         android:id="@+id/item4"/>
     <item android:title="Upcycling Form"
         android:id="@+id/item5" />
+    <item android:title="Recommendation"
+        android:id="@+id/item6" />
     </group>
 </menu>

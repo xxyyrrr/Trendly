@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/beige2">
 
     <TextView
         android:id="@+id/recommendations_text_view"
@@ -10,6 +11,7 @@
         android:layout_height="wrap_content"
         android:text="Recommended Clothing Items"
         android:textSize="24sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textColor="@color/green"/>
 
 </LinearLayout>

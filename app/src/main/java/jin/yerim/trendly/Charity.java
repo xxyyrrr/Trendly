@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -56,8 +57,8 @@ public class Charity extends AppCompatActivity {
         quality = getIntent().getIntExtra("quality",0);
 
         Button btn = findViewById(R.id.button11);
-        Button btn1 = findViewById(R.id.button4);
-        Button btn2 = findViewById(R.id.button8);
+        ImageButton btn1 = findViewById(R.id.button4);
+        ImageButton btn2 = findViewById(R.id.button8);
         Button btn3 = findViewById(R.id.button9);
         Button btn4 = findViewById(R.id.button10);
         Button btn5 = findViewById(R.id.button12);
@@ -70,7 +71,7 @@ public class Charity extends AppCompatActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                charity = btn1.getText().toString();
+                charity = "Cancer";
                 Toast.makeText(getApplicationContext(),"Cancer Selected!", Toast.LENGTH_SHORT).show();
                 charity1.put("charity", charity);
             }
@@ -78,7 +79,7 @@ public class Charity extends AppCompatActivity {
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                charity = btn2.getText().toString();
+                charity = "Children of Prisoners";
                 Toast.makeText(getApplicationContext(),"Children of Prisoners Selected!", Toast.LENGTH_SHORT).show();
                 charity1.put("charity", charity);
             }

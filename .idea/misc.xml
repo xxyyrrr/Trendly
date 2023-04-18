@@ -17,8 +17,10 @@
         <entry key="app/src/main/res/layout/customerinfo.xml" value="0.12006079027355623" />
         <entry key="app/src/main/res/layout/drawer.xml" value="0.246875" />
         <entry key="app/src/main/res/layout/editinfo.xml" value="0.25104166666666666" />
-        <entry key="app/src/main/res/layout/form.xml" value="0.19439697265625006" />
+        <entry key="app/src/main/res/layout/form.xml" value="0.22126922607421876" />
+        <entry key="app/src/main/res/layout/formitem.xml" value="0.2520833333333333" />
         <entry key="app/src/main/res/layout/formsubmit.xml" value="0.18353729248046874" />
+        <entry key="app/src/main/res/layout/fragment_recommendations.xml" value="0.3023727416992188" />
         <entry key="app/src/main/res/layout/giftcon.xml" value="0.19231567382812503" />
         <entry key="app/src/main/res/layout/giftconi.xml" value="0.246875" />
         <entry key="app/src/main/res/layout/help.xml" value="0.24583333333333332" />

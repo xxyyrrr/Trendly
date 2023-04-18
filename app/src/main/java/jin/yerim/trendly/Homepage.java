@@ -11,33 +11,25 @@ import androidx.appcompat.app.AppCompatActivity;
 public class Homepage extends AppCompatActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.homepage);
 
-        if (getIntent().hasExtra("userInput") && getIntent().hasExtra("userPassword")) {
-            setContentView(R.layout.homepage);
-
-            Button btn = findViewById(R.id.button);
-            btn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent it = new Intent(Homepage.this, Joinus.class);
-                    startActivity(it);
-                }
-            });
-            Button btn2 = findViewById(R.id.button1);
-            btn2.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent it = new Intent(Homepage.this, Mainpage.class);
-                    startActivity(it);
-                }
-            });
-        } else {
-            // the login credentials are invalid, start the Joinus activity
-            Intent it = new Intent(Homepage.this, Joinus.class);
-            startActivity(it);
-        }
+        Button btn = findViewById(R.id.button);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it = new Intent(Homepage.this, Joinus.class);
+                startActivity(it);
+            }
+        });
+        Button btn2 = findViewById(R.id.button1);
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it = new Intent(Homepage.this, Mainpage.class);
+                startActivity(it);
+            }
+        });
     }
 }
-

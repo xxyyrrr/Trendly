@@ -107,6 +107,13 @@ public class Mainpage extends AppCompatActivity {
                         Intent it5 = new Intent(Mainpage.this, Template.class);
                         startActivity(it5);
                         break;
+                    case R.id.item6:
+                        item.setChecked(true);
+                        Toast.makeText(getApplicationContext(), "Recommendation selected", Toast.LENGTH_SHORT).show();
+                        drawerLayout.closeDrawers();
+                        Intent it6 = new Intent(Mainpage.this, RecommendationsFragment.class);
+                        startActivity(it6);
+                        break;
                 }
                 item.setChecked(false);
                 return false;
