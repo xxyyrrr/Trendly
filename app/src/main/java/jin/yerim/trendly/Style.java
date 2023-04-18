@@ -22,4 +22,29 @@ public class Style {
         map.put("isSporty", isSporty);
         return map;
     }
+
+    public boolean getIsCasual() {
+        return isCasual;
+    }
+
+    public void setIsCasual(boolean isCasual) {
+        this.isCasual = isCasual;
+    }
+
+    public boolean getIsFormal() {
+        return isFormal;
+    }
+
+    public void setIsFormal(boolean isFormal) {
+        this.isFormal = isFormal;
+    }
+
+    public boolean getIsSporty() {
+        return isSporty;
+    }
+
+    public void setIsSporty(boolean isSporty) {
+        this.isSporty = isSporty;
+    }
+
 }

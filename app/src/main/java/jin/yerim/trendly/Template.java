@@ -41,17 +41,16 @@ public class Template extends AppCompatActivity {
     }
 
 
-            ActivityResultLauncher<String> mgetContent = registerForActivityResult(
-            new ActivityResultContracts.GetContent(),
-            new ActivityResultCallback<Uri>(){
-                @Override
-                public void onActivityResult(Uri result) {
-                    if (result !=null) {
-                        imageView.setImageURI(result);
-                        imageView.setVisibility(View.VISIBLE);
-                    }
+    ActivityResultLauncher<String> mgetContent = registerForActivityResult(
+        new ActivityResultContracts.GetContent(),
+        new ActivityResultCallback<Uri>(){
+            @Override
+            public void onActivityResult(Uri result) {
+                if (result !=null) {
+                    imageView.setImageURI(result);
+                    imageView.setVisibility(View.VISIBLE);
                 }
             }
-
+        }
     );
 }

@@ -94,13 +94,13 @@ public class RecommendationsFragment extends Fragment {
     int similarityScore = 0;
     private int calculateSimilarityScore(StylePreference userPreference, Style clothingItemStyle) {
 
-        if (userPreference.getColor().equals(clothingItemStyle.getColor())) {
+        if (clothingItemStyle.getIsCasual()) {
             similarityScore += 1;
         }
-        if (userPreference.getPattern().equals(clothingItemStyle.getPattern())) {
+        if (clothingItemStyle.getIsFormal()) {
             similarityScore += 1;
         }
-        if (userPreference.getMaterial().equals(clothingItemStyle.getMaterial())) {
+        if (clothingItemStyle.getIsSporty()) {
             similarityScore += 1;
         }
         return similarityScore / 3; // Normalize similarity score to be between 0 and 1
